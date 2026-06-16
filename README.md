@@ -6,7 +6,7 @@ Why I Chose This Issue: I chose this issue because OpenLLMetry is directly conne
 This issue also looks appropriate for a first open source contribution because it is labeled both good first issue and help wanted. It is scoped around testing rather than redesigning the whole library, but it still requires me to understand the project structure, the instrumentation behavior, and how maintainers expect tests to be written.
 Understanding the IssueProblem DescriptionThe OpenLLMetry project has disabled tests for the GCP / VertexAI instrumentation because the previous recording approach, vcr.py, does not support GRPC requests. The maintainers need a way to mock or simulate the VertexAI GRPC interactions so the tests can run without making real network calls.
 Expected BehaviorThe VertexAI instrumentation should have automated tests that can run locally and in CI without calling real GCP / VertexAI services. These tests should verify that the instrumentation creates the expected telemetry spans and attributes.
-Current BehaviorThe issue says the VertexAI tests were disabled after a related change because the current test-recording approach cannot handle GRPC. As a result, the project has weaker test coverage for VertexAI instrumentation.
+Current BehaviorThe issue says the VertexAI tests were disabled after a related change because the current test-recording approach cannot handle GRPC. As a result, the project has weaker test coverage for  instrumentation.
 Affected ComponentsVertexAI Instrumentation
 GCP / VertexAI test suite
 Test mocking or fixture setup for GRPC-based requests
