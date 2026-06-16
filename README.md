@@ -28,7 +28,7 @@ Clone the fork locally:bash
 
 
 
-git clone https://github.com/<your-username>/openllmetry.git
+git clone https://github.com/luciana081/openllmetry.git
 cd openllmetry
 
 
@@ -72,7 +72,7 @@ npx nx run opentelemetry-instrumentation-vertexai:test
 
 The package test target runs uv run pytest tests/. With uv properly installed, this command should collect the enabled tests only. In my current Windows setup, the command reaches the target but fails earlier with 'uv' is not recognized as an internal or external command.
 Open tests/disabled_test_bison.py and tests/disabled_test_gemini.py. These disabled tests still make real VertexAI SDK calls such as TextGenerationModel.from_pretrained(...).predict(...), ChatModel.from_pretrained(...).start_chat(...), and GenerativeModel(...).generate_content(...). Several Bison tests are marked with pytest.mark.vcr, while the GitHub issue explains that VCR cannot handle the GRPC requests used by VertexAI.
-Reproduction EvidenceBranch showing reproduction: https://github.com/YOUR-USERNAME/openllmetry/tree/fix-vertexai-disabled-tests
+Reproduction EvidenceBranch showing reproduction: https://github.com/Luciana081/openllmetry/tree/fix-vertexai-disabled-tests
 Screenshots/logs: Local command findings:npm ci completed successfully after allowing npm to write cache/log files.
 npx nx run opentelemetry-instrumentation-vertexai:test reached the package target and attempted uv run pytest tests/.
 The current local machine needs uv fixed on PATH before pytest can run: 'uv' is not recognized as an internal or external command.
